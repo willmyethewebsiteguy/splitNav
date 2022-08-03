@@ -55,11 +55,14 @@
 
 .wm-split-nav .header-nav-list:not(.header-nav-list--right) .header-nav-item:not(:last-child){
   margin-right: var(--link-spacing);
+  margin-left:unset;
 }
 .wm-split-nav .header-nav-list.header-nav-list--right .header-nav-item:not(:first-child){
+  margin-right: unset;
   margin-left: var(--link-spacing);
 }
 .wm-split-nav .header-actions--right .header-actions-action {
+  margin-right: unset;
   margin-left: var(--link-spacing);
 }
 
