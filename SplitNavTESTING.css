@@ -1,0 +1,73 @@
+/**
+ * Split Navigation for Squarespace
+ * This Code is Licensed by Will-Myers.com
+*/
+#header {
+  --right-nav-links: 1;
+  --link-spacing: 1.3rem;
+}
+
+/*Getting the Spacing to Work*/
+#header.wm-split-nav .header-title-nav-wrapper{
+  flex: 1 0 var(--titleNavWidth);
+}
+#header.wm-split-nav .header-nav {
+  width: unset;
+  flex: 1 1 var(--innerNavWidth);
+}
+#header.wm-split-nav .header-title{
+  width: unset;
+  flex: 1 1 var(--innerTitleWidth);
+  padding: 0 var(--link-spacing);
+  box-sizing: border-box;
+}
+#header.wm-split-nav .header-display-desktop .header-actions--right{
+  flex: 1 0 var(--sideWidth);
+  width: 100%;
+}
+
+/*Right Nav Size*/
+.wm-split-nav .header-nav{
+  flex: 1;  
+}
+.wm-split-nav .header-nav-list{
+  flex:1;
+  display:flex;
+}
+
+/*Social Links*/
+.wm-split-nav .header-actions-action--social{
+  display:inline-flex;
+}
+.wm-split-nav .header-actions--right .header-actions-action--social .icon:first-child {
+  margin-left:unset;
+}
+
+/*Fade In New Nav on Load*/
+.header-nav-list, .header-actions{
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.wm-split-nav .header-nav-list, .wm-split-nav .header-actions{
+  opacity: 1;
+}
+
+
+.wm-split-nav .header-nav-list:not(.header-nav-list--right) .header-nav-item:not(:last-child){
+  margin-right: var(--link-spacing);
+}
+.wm-split-nav .header-nav-list.header-nav-list--right .header-nav-item:not(:first-child){
+  margin-left: var(--link-spacing);
+}
+.wm-split-nav .header-actions--right .header-actions-action {
+  margin-left: var(--link-spacing);
+}
+
+
+.wm-split-nav .header-nav-list--right{
+  justify-content:var(--right-alignment);
+}
+.wm-split-nav .header-nav-list:not(.header-nav-list--right) {
+  display:flex;
+  justify-content:var(--left-alignment);
+}
