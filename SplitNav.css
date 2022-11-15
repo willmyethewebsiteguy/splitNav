@@ -2,27 +2,30 @@
  * Split Navigation for Squarespace
  * This Code is Licensed by Will-Myers.com
 */
-#header {
+.header {
   --right-nav-links: 1;
   --link-spacing: 1.3rem;
+  --site-title-width: 200px;
+  --side-width: calc((100% - var(--site-title-width)) / 2);
+  --title-nav-width: calc(var(--side-width) + var(--site-title-width));
 }
 
 /*Getting the Spacing to Work*/
 #header.wm-split-nav .header-title-nav-wrapper{
-  flex: 1 0 var(--titleNavWidth);
+  flex: 1 0 var(--title-nav-width);
 }
 #header.wm-split-nav .header-nav {
   width: unset;
-  flex: 1 1 var(--innerNavWidth);
+  flex: 1 1 var(--side-width);
 }
 #header.wm-split-nav .header-display-desktop .header-title{
-  width: unset;
-  flex: 1 1 var(--innerTitleWidth);
-  padding: 0 var(--link-spacing);
+  width: var(--site-title-width);
+  flex: unset;
+  padding: 0 var(--title-spacing, var(--link-spacing));
   box-sizing: border-box;
 }
 #header.wm-split-nav .header-display-desktop .header-actions--right{
-  flex: 1 0 var(--sideWidth);
+  flex: 1 0 var(--side-width);
   width: 100%;
 }
 
