@@ -3,7 +3,7 @@
  * This Code is licensed by Will-Myers.com 
 ========== */
 (function(){ 
-  moveStylesheet()
+  moveStylesheet();
 
   let header = document.querySelector('#header'),
       navList = header.querySelector('.header-display-desktop .header-nav-list'),
@@ -21,26 +21,13 @@
   newNav = headerActionsRight.querySelector('.header-nav-list--right');
   rightNavLinks.forEach(link => newNav.append(link));
   
-  //Calculating widths
-  let titleWidth = parseInt(headerStyles.getPropertyValue('--site-title-width')),
-      sideWidth = (100 - titleWidth) / 2,
-      titleNavWidth = 100 - sideWidth,
-      innerTitleWidth = parseFloat(titleWidth / titleNavWidth).toFixed(2),
-      innerNavWidth = parseFloat(sideWidth / titleNavWidth).toFixed(2);
-  
-  header.style.setProperty('--sideWidth', `${sideWidth}%`)
-  header.style.setProperty('--titleNavWidth', `${titleNavWidth}%`)
-  header.style.setProperty('--innerTitleWidth', `${innerTitleWidth * 100}%`)
-  header.style.setProperty('--innerNavWidth', `${innerNavWidth * 100}%`)
-  
   
   //Move Stylesheet
   function moveStylesheet() {
-    let stylesheet = document.querySelector('#wm-split-nav-css');
+    let stylesheet = document.querySelector('link[href*="/SplitNav"]');
     if (!stylesheet) return;
     document.head.prepend(stylesheet);
   }
-
 
   /*
   * Check If Flex Gap Is Supported
