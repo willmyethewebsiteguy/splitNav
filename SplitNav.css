@@ -28,6 +28,9 @@
   flex: 1 0 var(--side-width);
   width: 100%;
 }
+#header.wm-split-nav .header-title-logo img{
+  max-height:unset;
+}
 
 /*Right Nav Size*/
 .wm-split-nav .header-nav{
