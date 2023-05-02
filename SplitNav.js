@@ -51,10 +51,28 @@
 
     return isSupported;
   }
-  if(checkFlexGap){
-    //console.log('flex gap supported!')
-  } else {
-    //console.log('flex gap not supported :(')
+  if (!checkFlexGap()) {
+    document.body.classList.add("no-flexbox-gap");
+
+    let header = document.querySelector('#header')
+    let styles = window.getComputedStyle(header);
+    let leftAlign = styles.getPropertyValue('--left-alignment');
+    let rightAlign = styles.getPropertyValue('--right-alignment');
+
+    if (leftAlign == 'right'){
+      leftAlign = 'flex-end';
+    } else if (leftAlign == 'left'){
+      leftAlign = 'flex-start';
+    }
+
+    if (rightAlign == 'right'){
+      rightAlign = 'flex-end';
+    } else if (rightAlign == 'left'){
+      rightAlign = 'flex-start';
+    }
+
+    header.style.setProperty('--left-alignment', leftAlign);
+    header.style.setProperty('--right-alignment', rightAlign)
   }
   
 }());
