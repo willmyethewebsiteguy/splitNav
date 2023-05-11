@@ -12,7 +12,7 @@
 
 /*Getting the Spacing to Work*/
 #header.wm-split-nav .header-title-nav-wrapper{
-  flex: 1 0 var(--title-nav-width);
+  flex: 1 1 var(--title-nav-width);
 }
 #header.wm-split-nav .header-nav {
   width: unset;
